@@ -27,6 +27,7 @@ public class Main extends Application{
         sprite.setViewport(new Rectangle2D(20, 0, 65, 100));
         sprite.setX(200);
         sprite.setY(300);
+
         root.getChildren().add(sprite);
 
 
