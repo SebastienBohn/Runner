@@ -8,14 +8,18 @@ public class staticThing {
 
     private double positionX;
     private double positionY;
+    private double rectangleX;
+    private double rectangleY;
     private double longueur;
     private double hauteur;
     private String filename;
     private ImageView background;
 
-    public staticThing(double X, double Y, double longueur, double hauteur, String fileName){
-        this.positionX = X;
-        this.positionY = Y;
+    public staticThing(double positionX, double positionY, double rectangleX, double rectangleY, double longueur, double hauteur, String fileName){
+        this.positionX = positionX;
+        this.positionY = positionY;
+        this.rectangleX = rectangleX;
+        this.rectangleY = rectangleY;
         this.longueur = longueur;
         this.hauteur = hauteur;
         this.filename = fileName;
@@ -25,7 +29,7 @@ public class staticThing {
 
 
     public void DispositionBackground() { //Pour découper et mettre l'image au bon endroit sur la scene
-        this.background.setViewport(new Rectangle2D(this.positionX, this.positionY, this.longueur, this.hauteur));
+        this.background.setViewport(new Rectangle2D(this.rectangleX, this.rectangleY, this.longueur, this.hauteur));
         this.background.setX(this.positionX);
         this.background.setY(this.positionY);
     }
