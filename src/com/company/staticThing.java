@@ -27,6 +27,7 @@ public class staticThing {
     public void DispositionBackground() { //Pour découper et mettre l'image au bon endroit sur la scene
         this.background.setViewport(new Rectangle2D(this.positionX, this.positionY, this.longueur, this.hauteur));
         this.background.setX(this.positionX);
+        this.background.setY(this.positionY);
     }
 
 
