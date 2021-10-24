@@ -18,16 +18,15 @@ public class Main extends Application{
 
         primaryStage.setTitle("BOHN_Sebastien_Runner");
         Group root = new Group();
-        Scene scene = new GameScene(root, 600, 400, 500,300);
+        Scene scene = new GameScene(root, 800, 400, 200,250);
         primaryStage.setScene(scene);
         primaryStage.show();
-
 
         Image spriteSheet = new Image("E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\heros.png");
         ImageView sprite = new ImageView(spriteSheet);
         sprite.setViewport(new Rectangle2D(20, 0, 65, 100));
         sprite.setX(200);
-        sprite.setY(300);
+        sprite.setY(250);
         root.getChildren().add(sprite);
 
 
