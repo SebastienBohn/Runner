@@ -32,39 +32,40 @@ public class AnimatedThing {
 
         switch (attitude){
             case 0 :
-                this.rectangleX = 0;
+                this.rectangleX = 20;
                 this.rectangleY = 0;
-                this.longueur = 75;
+                this.longueur = 65;
                 this.hauteur = 100;
                 break;
             case 1 :
-                this.rectangleX = 0;
+                this.rectangleX = 21;
                 this.rectangleY = 160;
-                this.longueur = 75;
-                this.hauteur = 100;
+                this.longueur = 60;
+                this.hauteur = 105;
                 break;
             case 2 :
                 this.rectangleX = 0;
                 this.rectangleY = 325;
-                this.longueur = 75;
+                this.longueur = 65;
                 this.hauteur = 100;
                 break;
             case 3 :
                 this.rectangleX = 0;
                 this.rectangleY = 490;
-                this.longueur = 75;
+                this.longueur = 65;
                 this.hauteur = 100;
                 break;
             default:
                 this.rectangleX = 0;
                 this.rectangleY = 1;
-                this.longueur = 75;
+                this.longueur = 65;
                 this.hauteur = 100;
                 break;
         }
 
         this.imageDynamique.setViewport(new Rectangle2D(this.rectangleX, this.rectangleY, this.longueur, this.hauteur));
-
+        this.imageDynamique.setX(this.positionX);
+        this.imageDynamique.setY(this.positionY);
     }
 
 
