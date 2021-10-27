@@ -13,7 +13,7 @@ public class staticThing {
     private double longueur;
     private double hauteur;
     private String filename;
-    private ImageView background;
+    private ImageView imageStatique;
 
     public staticThing(double positionX, double positionY, double rectangleX, double rectangleY, double longueur, double hauteur, String fileName){
         this.positionX = positionX;
@@ -23,19 +23,19 @@ public class staticThing {
         this.longueur = longueur;
         this.hauteur = hauteur;
         this.filename = fileName;
-        this.background = new ImageView(new Image(this.filename));
-        DispositionBackground();
+        this.imageStatique = new ImageView(new Image(this.filename));
+        DispositionImageStatique();
     }
 
 
-    public void DispositionBackground() { //Pour découper et mettre l'image au bon endroit sur la scene
-        this.background.setViewport(new Rectangle2D(this.rectangleX, this.rectangleY, this.longueur, this.hauteur));
-        this.background.setX(this.positionX);
-        this.background.setY(this.positionY);
+    public void DispositionImageStatique() { //Pour découper et mettre l'image au bon endroit sur la scene
+        this.imageStatique.setViewport(new Rectangle2D(this.rectangleX, this.rectangleY, this.longueur, this.hauteur));
+        this.imageStatique.setX(this.positionX);
+        this.imageStatique.setY(this.positionY);
     }
 
 
-    public ImageView getBackground() {return background;}
+    public ImageView getBackground() {return imageStatique;}
     public double getPositionX() {return positionX;}
     public double getPositionY() {return positionY;}
     public String getFilename() {return filename;}
