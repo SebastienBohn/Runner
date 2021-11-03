@@ -18,18 +18,10 @@ public class Main extends Application{
 
         primaryStage.setTitle("BOHN_Sebastien_Runner");
         Group root = new Group();
-        Scene scene = new GameScene(root, 800, 400, 200,250);
+        Scene scene = new GameScene(root, 800, 400);
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        AnimatedThing Robot1 = new AnimatedThing(200,250,0,"E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\heros.png");
-        root.getChildren().add(Robot1.getImageDynamique());
-        AnimatedThing Robot2 = new AnimatedThing(300,250,1,"E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\heros.png");
-        root.getChildren().add(Robot2.getImageDynamique());
-        AnimatedThing Robot3 = new AnimatedThing(400,250,0 ,"E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\heros.png");
-        root.getChildren().add(Robot3.getImageDynamique());
-        AnimatedThing Robot4 = new AnimatedThing(500,250,1,"E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\heros.png");
-        root.getChildren().add(Robot4.getImageDynamique());
         /*
         Image spriteSheet = new Image("E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\heros.png");
         ImageView sprite = new ImageView(spriteSheet);
