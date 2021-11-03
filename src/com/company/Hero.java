@@ -10,7 +10,7 @@ public class Hero extends AnimatedThing {
     private double positionY;
     private Integer attitude;
     private String fileName;
-    private ImageView imageDynamique;
+    private ImageView imageHeros;
     private double rectangleX;
     private double rectangleY;
 
@@ -20,20 +20,31 @@ public class Hero extends AnimatedThing {
         this.positionY = positionY;
         this.attitude = attitude;
         this.fileName = fileName;
-
-        this.imageDynamique = getImageDynamique();
-        this.imageDynamique.setViewport(new Rectangle2D(0, 5, 75, 100));
-        this.imageDynamique.setX(this.positionX);
-        this.imageDynamique.setY(this.positionY);
+        this.imageHeros = getImageDynamique();
+        this.imageHeros.setX(this.positionX);
+        this.imageHeros.setY(this.positionY);
     }
+
+    public void miseAJourHeros(long time, double ImageHeros){
+        //Maj de l'attitude du heros :
+
+
+        //Maj de l'image du heros :
+        this.imageHeros.setViewport(new Rectangle2D(ImageHeros*85, 0, 85, 100));
+
+    }
+
+
+
 
     public void Update (long time) {
         //Le héros avance
-        positionX = (positionX + 3);
+        positionX = (positionX + 5);
     }
 
     public double getPositionX() {return positionX;}
     public double getPositionY() {return positionY;}
+    public Integer getAttitude() {return attitude;}
 
 
 }

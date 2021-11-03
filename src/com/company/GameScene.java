@@ -5,6 +5,8 @@ import javafx.scene.Scene;
 import javafx.scene.Group;
 import javafx.geometry.Rectangle2D;
 
+import java.awt.*;
+
 
 public class GameScene extends Scene {
 
@@ -17,7 +19,8 @@ public class GameScene extends Scene {
     private Hero heros = new Hero(100,250,0 ,"E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\heros.png");
 
 
-
+    private double ImageHeros = 0;
+    private double compteur = 5;
 
     private AnimationTimer Timer = new AnimationTimer() {
         @Override
@@ -25,6 +28,14 @@ public class GameScene extends Scene {
             heros.Update(time);
             double posXheros = heros.getPositionX();
             camera.Update(time,posXheros);
+            if(compteur==5){
+                ImageHeros=(ImageHeros+1)%3;
+                heros.miseAJourHeros(time,ImageHeros);
+                compteur = 0;
+            }
+            else{
+                compteur++;
+            }
             miseAJourScene();
         }
     };
@@ -41,8 +52,6 @@ public class GameScene extends Scene {
         this.fondRight = new staticThing(100,0,this.longueur-100,this.hauteur, "E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\desert.png");
         this.numberOfLives = new staticThing(800-140,18,120,50, "E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\pointDeVie.png");
 
-
-
         Timer.start();
 
         root.getChildren().add(fondLeft.getImageStatique());
@@ -51,6 +60,7 @@ public class GameScene extends Scene {
         root.getChildren().add(heros.getImageDynamique());
 
         miseAJourScene();
+
     }
 
     public void miseAJourScene(){
@@ -62,10 +72,6 @@ public class GameScene extends Scene {
         fondRight.getImageStatique().setViewport(new Rectangle2D(0, 0, decalage, fondRight.getHauteur()));
         fondRight.getImageStatique().setX(800-decalage);
         numberOfLives.getImageStatique().setViewport(new Rectangle2D(0, 0, numberOfLives.getLongueur(), numberOfLives.getHauteur()));
-
-        //Maj du héros :
-
-
     }
 
 
