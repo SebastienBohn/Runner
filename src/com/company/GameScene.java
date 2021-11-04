@@ -4,8 +4,8 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
 import javafx.scene.Group;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.input.KeyCode;
 
-import java.awt.*;
 
 
 public class GameScene extends Scene {
@@ -59,7 +59,15 @@ public class GameScene extends Scene {
         root.getChildren().add(numberOfLives.getImageStatique());
         root.getChildren().add(heros.getImageDynamique());
 
+        this.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.SPACE) {
+                heros.jump();
+            }
+        });
+
+
         miseAJourScene();
+
 
     }
 
@@ -72,6 +80,8 @@ public class GameScene extends Scene {
         fondRight.getImageStatique().setViewport(new Rectangle2D(0, 0, decalage, fondRight.getHauteur()));
         fondRight.getImageStatique().setX(800-decalage);
         numberOfLives.getImageStatique().setViewport(new Rectangle2D(0, 0, numberOfLives.getLongueur(), numberOfLives.getHauteur()));
+
+        heros.getImageDynamique().setY(heros.getPositionY());
     }
 
 

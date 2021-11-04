@@ -10,6 +10,9 @@ public class Camera {
     }
 
     public void Update(long time, double posXheros){
+        //double acceleration = (posXheros-this.x)+1.2*vitesse;
+        //double vitesse = acceleration*time;
+        //this.x = vitesse*time;
         this.x = posXheros;
     }
 

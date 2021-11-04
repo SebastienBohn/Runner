@@ -13,6 +13,8 @@ public class Hero extends AnimatedThing {
     private ImageView imageHeros;
     private double rectangleX;
     private double rectangleY;
+    private double deplacementY = 0;
+    private double monteOK = 0;
 
     public Hero(double positionX, double positionY, Integer attitude, String fileName){
         super(positionX,positionY,attitude, fileName);
@@ -34,12 +36,32 @@ public class Hero extends AnimatedThing {
 
     }
 
-
+    public void jump(){
+        //On monte seulement si le joueur est encore en-bas, on n'additionne pas les sauts :
+        if(this.positionY>=15){
+            this.deplacementY-=15;
+            this.monteOK=1;
+        }
+    }
 
 
     public void Update (long time) {
         //Le héros avance
         positionX = (positionX + 5);
+
+        //On met les effets de la gravité :
+        this.positionY+=this.deplacementY;
+        if(this.monteOK==0){
+            this.deplacementY=+5;
+        }
+        this.monteOK=0;
+
+        //On définit le sol qui se situe à 50 pixels:
+        if(this.positionY>=250){
+            this.positionY=250;
+            this.deplacementY=0;
+        }
+
     }
 
     public double getPositionX() {return positionX;}
