@@ -72,6 +72,7 @@ public class GameScene extends Scene {
             }
         });
 
+        Integer collision = heros.Rectangle2DgetHitBox(heros.getPositionX(), heros.getPositionY(), 85,100,Foe.get(0).getPositionX(), Foe.get(0).getPositionY());
 
         miseAJourScene();
 
@@ -90,8 +91,5 @@ public class GameScene extends Scene {
 
         heros.getImageDynamique().setY(heros.getPositionY());
     }
-
-
-
 
 }

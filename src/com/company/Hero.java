@@ -15,6 +15,8 @@ public class Hero extends AnimatedThing {
     private double rectangleY;
     private double deplacementY = 0;
     private double monteOK = 0;
+    private double invincibility;
+    private Integer pointDeVie = 3;
 
     public Hero(double positionX, double positionY, Integer attitude, String fileName){
         super(positionX,positionY,attitude, fileName);
@@ -74,9 +76,20 @@ public class Hero extends AnimatedThing {
 
     }
 
+    public void isInvincible(){
+        if(collision==1){
+            this.invincibility==5000000000;
+            this.pointDeVie-=1;
+        }
+    }
+
+
+
     public double getPositionX() {return positionX;}
     public double getPositionY() {return positionY;}
     public Integer getAttitude() {return attitude;}
 
+    public double getInvincibility() {return invincibility;}
+    public void setInvincibility(double invincibility) {this.invincibility = invincibility;}
 
 }

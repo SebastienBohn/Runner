@@ -25,4 +25,8 @@ public class foe extends AnimatedThing{
         this.imageFoe.setY(this.positionY);
     }
 
+    public double getPositionX() {return positionX;}
+    public double getPositionY() {return positionY;}
+
+
 }
