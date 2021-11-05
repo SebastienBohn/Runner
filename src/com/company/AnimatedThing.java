@@ -40,8 +40,8 @@ public class AnimatedThing {
 
     public ImageView getImageDynamique() {return this.imageDynamique;}
 
-    public void update(long time){
-        this.rectangleX = IndexPosX.get((int)(this.rectangleX+1)%5);
+    public Integer Rectangle2DgetHitBox(){
+
     }
 
 

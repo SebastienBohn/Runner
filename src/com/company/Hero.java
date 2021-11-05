@@ -29,10 +29,20 @@ public class Hero extends AnimatedThing {
 
     public void miseAJourHeros(long time, double ImageHeros){
         //Maj de l'attitude du heros :
-
+        if(this.deplacementY<0){
+            ImageHeros=0;
+            this.attitude=1;
+        }
+        else if(this.deplacementY>0 && this.positionY<250){
+            ImageHeros=1;
+            this.attitude=1;
+        }
+        else{
+            this.attitude=0;
+        }
 
         //Maj de l'image du heros :
-        this.imageHeros.setViewport(new Rectangle2D(ImageHeros*85, 0, 85, 100));
+        this.imageHeros.setViewport(new Rectangle2D(ImageHeros*85, this.attitude*160, 85, 100));
 
     }
 
@@ -52,7 +62,7 @@ public class Hero extends AnimatedThing {
         //On met les effets de la gravité :
         this.positionY+=this.deplacementY;
         if(this.monteOK==0){
-            this.deplacementY=+5;
+            this.deplacementY=5;
         }
         this.monteOK=0;
 

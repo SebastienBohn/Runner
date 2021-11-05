@@ -6,6 +6,7 @@ import javafx.scene.Group;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.input.KeyCode;
 
+import java.util.ArrayList;
 
 
 public class GameScene extends Scene {
@@ -17,6 +18,8 @@ public class GameScene extends Scene {
     private double longueur;
     private double hauteur;
     private Hero heros = new Hero(100,250,0 ,"E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\heros.png");
+    private ArrayList<foe> Foe = null;
+
 
 
     private double ImageHeros = 0;
@@ -52,12 +55,16 @@ public class GameScene extends Scene {
         this.fondRight = new staticThing(100,0,this.longueur-100,this.hauteur, "E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\desert.png");
         this.numberOfLives = new staticThing(800-140,18,120,50, "E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\pointDeVie.png");
 
+        this.Foe = new ArrayList<foe>();
+        this.Foe.add(new foe(400,250,0,"E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\tank1.png"));
+
         Timer.start();
 
         root.getChildren().add(fondLeft.getImageStatique());
         root.getChildren().add(fondRight.getImageStatique());
         root.getChildren().add(numberOfLives.getImageStatique());
         root.getChildren().add(heros.getImageDynamique());
+        root.getChildren().add(this.Foe.get(0).getImageDynamique());
 
         this.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.SPACE) {
