@@ -6,10 +6,12 @@ import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import javafx.scene.input.KeyCode;
 
 
 public class Main extends Application{
@@ -17,20 +19,23 @@ public class Main extends Application{
     public void start(Stage primaryStage){
 
         primaryStage.setTitle("BOHN_Sebastien_Runner");
-        Group root = new Group();
-        Scene scene = new GameScene(root, 800, 400);
-        primaryStage.setScene(scene);
+        Group root1 = new Group();
+        Scene debut = new WaitScene(root1, 800, 400, 0);
+
+        Group root2 = new Group();
+        Scene jeu = new GameScene(root2, 800, 400);
+
+        Group root3 = new Group();
+        Scene fin = new WaitScene(root3, 800, 400, 1);
+
+        primaryStage.setScene(debut);
         primaryStage.show();
-
-        /*
-        Image spriteSheet = new Image("E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\heros.png");
-        ImageView sprite = new ImageView(spriteSheet);
-        sprite.setViewport(new Rectangle2D(20, 0, 65, 100));
-        sprite.setX(200);
-        sprite.setY(250);
-        root.getChildren().add(sprite);
-        */
-
+        debut.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                primaryStage.setScene(jeu);
+                primaryStage.show();
+            }
+        });
 
     }
     public static void main(String[] args) {

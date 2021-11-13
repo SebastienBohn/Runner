@@ -20,24 +20,33 @@ public class GameScene extends Scene {
     private Hero heros = new Hero(100,250,0 ,"E:\\Documents\\ENSEA\\2A\\MajeureInfo\\ProgObjetJava\\Runner\\heros.png");
     private ArrayList<foe> Foe = null;
 
-
-
     private double ImageHeros = 0;
-    private double compteur = 5;
+    private double compteurCourse = 5;
+    private double monteOK;
+    private double compteurMontee = 0;
+
 
     private AnimationTimer Timer = new AnimationTimer() {
         @Override
         public void handle(long time) {
             heros.Update(time);
             double posXheros = heros.getPositionX();
+            monteOK = heros.getMonteOK();
+            if(monteOK==1 && compteurMontee==15){
+                heros.setMonteOK(0);
+                compteurMontee=0;
+            }
+            else if(monteOK==1){
+                compteurMontee++;
+            }
             camera.Update(time,posXheros);
-            if(compteur==5){
+            if(compteurCourse==5){
                 ImageHeros=(ImageHeros+1)%3;
                 heros.miseAJourHeros(time,ImageHeros);
-                compteur = 0;
+                compteurCourse = 0;
             }
             else{
-                compteur++;
+                compteurCourse++;
             }
             miseAJourScene();
         }

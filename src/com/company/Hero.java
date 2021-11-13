@@ -49,9 +49,9 @@ public class Hero extends AnimatedThing {
     }
 
     public void jump(){
-        //On monte seulement si le joueur est encore en-bas, on n'additionne pas les sauts :
-        if(this.positionY>=15){
-            this.deplacementY-=15;
+        //On monte seulement si le joueur est au sol, on n'additionne pas les sauts :
+        if(this.positionY>=250){
+            this.deplacementY-=10;
             this.monteOK=1;
         }
     }
@@ -66,7 +66,6 @@ public class Hero extends AnimatedThing {
         if(this.monteOK==0){
             this.deplacementY=5;
         }
-        this.monteOK=0;
 
         //On définit le sol qui se situe à 50 pixels:
         if(this.positionY>=250){
@@ -77,14 +76,16 @@ public class Hero extends AnimatedThing {
     }
 
     public void isInvincible(){
-        if(collision==1){
-            this.invincibility==5000000000;
-            this.pointDeVie-=1;
-        }
+        //if(collision==1){
+       //     this.invincibility==5000000000;
+         //   this.pointDeVie-=1;
+        //}
     }
 
 
 
+    public void setMonteOK(double monteOK) {this.monteOK = monteOK;}
+    public double getMonteOK() {return monteOK;}
     public double getPositionX() {return positionX;}
     public double getPositionY() {return positionY;}
     public Integer getAttitude() {return attitude;}
