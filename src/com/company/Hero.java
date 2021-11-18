@@ -75,11 +75,11 @@ public class Hero extends AnimatedThing {
 
     }
 
-    public void isInvincible(){
-        //if(collision==1){
-       //     this.invincibility==5000000000;
-         //   this.pointDeVie-=1;
-        //}
+    public void isInvincible(Integer collision){
+        if(collision==1){
+            this.invincibility=1000;
+            this.pointDeVie-=1;
+        }
     }
 
 
@@ -92,5 +92,8 @@ public class Hero extends AnimatedThing {
 
     public double getInvincibility() {return invincibility;}
     public void setInvincibility(double invincibility) {this.invincibility = invincibility;}
+    public Integer getPointDeVie() {return pointDeVie;}
+
+
 
 }

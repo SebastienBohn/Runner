@@ -11,6 +11,7 @@ public class foe extends AnimatedThing{
     private Integer attitude;
     private String fileName;
     private ImageView imageFoe;
+    private Integer collision;
 
 
 
@@ -23,10 +24,14 @@ public class foe extends AnimatedThing{
         this.imageFoe = getImageDynamique();
         this.imageFoe.setX(this.positionX);
         this.imageFoe.setY(this.positionY);
+        this.collision = Rectangle2DgetHitBox(0,0,0,0,this.positionX,this.positionY);
     }
 
     public double getPositionX() {return positionX;}
     public double getPositionY() {return positionY;}
+    public Integer getCollision() {return collision;}
+
+    public void setPositionX(double positionX) {this.positionX = positionX;}
 
 
 }

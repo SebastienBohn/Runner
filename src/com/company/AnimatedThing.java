@@ -42,7 +42,7 @@ public class AnimatedThing {
 
     public Integer Rectangle2DgetHitBox(double positionHerosX, double positionHerosY, double longueurHeros, double hauteurHeros, double positionFoeX, double positionFoeY){
         //On regarde si le personnage est verticalement ET horizontalement en train de toucher l'ennemi
-        if(positionHerosX+longueurHeros>=positionFoeX && positionHerosY+hauteurHeros>=positionFoeY){
+        if(positionHerosX+longueurHeros>=positionFoeX && positionHerosY+hauteurHeros<=positionFoeY){
             return 1;
         }
         return 0;
