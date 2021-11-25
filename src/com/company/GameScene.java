@@ -36,7 +36,7 @@ public class GameScene extends Scene {
     private AnimationTimer Timer = new AnimationTimer() {
         @Override
         public void handle(long time) {
-            heros.Update(time);
+            heros.Update(time); //On met à jour la position du heros
             double posXheros = heros.getPositionX();
             monteOK = heros.getMonteOK();
             if(monteOK==1 && compteurMontee==20){
@@ -47,7 +47,7 @@ public class GameScene extends Scene {
                 compteurMontee++;
             }
             camera.Update(time,posXheros);
-            if(compteurCourse==5){
+            if(compteurCourse==5){ //On compte tous les 5 passages dans le Timer pour ne pas passer trop vite les différentes images
                 herosInvincible = (herosInvincible+1)%2;
                 ImageFoe=(ImageFoe+1)%5;
                 ImageHeros=(ImageHeros+1)%3;
@@ -57,13 +57,13 @@ public class GameScene extends Scene {
             else{
                 compteurCourse++;
             }
-            if(heros.getInvincibility()==0){
+            if(heros.getInvincibility()==0){ //Si le héros n'est pas invincible, on teste la HitBox
                 for(foe f : Foe){
                     collision = heros.Rectangle2DgetHitBox(heros.getPositionX(),heros.getPositionY(),85,100,f.getPositionX(), f.getPositionY());
                     heros.isInvincible(collision);
                 }
             }
-            else{
+            else{//Si le heros est invincible, on le fait clignoter
                 heros.setInvincibility(heros.getInvincibility()-10);
                 heros.getImageDynamique().setViewport(new Rectangle2D(ImageHeros*85, heros.getAttitude()*160, 85*herosInvincible+1, 100));
             }

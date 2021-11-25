@@ -11,10 +11,6 @@ public class AnimatedThing {
     private double positionY;
     private ImageView imageDynamique;
     private String filename;
-    //Pour l'animation :
-    private ArrayList<Integer> IndexPosX = null;
-    private double rectangleX = 0;
-    private double rectangleY = 0;
 
     //Définition du constructeur
     public AnimatedThing(double positionX, double positionY, Integer attitude, String fileName){

@@ -27,7 +27,7 @@ public class Hero extends AnimatedThing {
         this.imageHeros.setX(this.positionX);
         this.imageHeros.setY(this.positionY);
     }
-
+    //Définition de la méthode qui met à jour l'image associée au héros
     public void miseAJourHeros(long time, double ImageHeros){
         //Maj de l'attitude du heros :
         if(this.deplacementY<0){
@@ -44,9 +44,9 @@ public class Hero extends AnimatedThing {
 
         //Maj de l'image du heros :
         this.imageHeros.setViewport(new Rectangle2D(ImageHeros*85, this.attitude*160, 85, 100));
-
     }
 
+    //Définition de la méthode qui fait sauter le héros
     public void jump(){
         //On monte seulement si le joueur est au sol, on n'additionne pas les sauts :
         if(this.positionY>=250){
@@ -55,7 +55,7 @@ public class Hero extends AnimatedThing {
         }
     }
 
-    //Définition de la méthode qui met à jour la position du héros sur l'image
+    //Définition de la méthode qui met à jour la position du héros dans le jeu
     public void Update (long time) {
         //Le héros avance
         this.positionX = (this.positionX + 6);
@@ -74,13 +74,13 @@ public class Hero extends AnimatedThing {
 
     }
 
+    //Définition de la méthode qui rend le héros invincible
     public void isInvincible(Integer collision){
         if(collision==1){
             this.invincibility=1000;
             this.pointDeVie-=1;
         }
     }
-
 
     //Fonctions get et set
     public double getMonteOK() {return monteOK;}
