@@ -1,7 +1,6 @@
 package com.company;
 
 import javafx.geometry.Rectangle2D;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Hero extends AnimatedThing {
@@ -56,7 +55,7 @@ public class Hero extends AnimatedThing {
         }
     }
 
-
+    //Définition de la méthode qui met à jour la position du héros sur l'image
     public void Update (long time) {
         //Le héros avance
         this.positionX = (this.positionX + 6);
@@ -83,16 +82,14 @@ public class Hero extends AnimatedThing {
     }
 
 
-
-    public void setMonteOK(double monteOK) {this.monteOK = monteOK;}
+    //Fonctions get et set
     public double getMonteOK() {return monteOK;}
     public double getPositionX() {return positionX;}
     public double getPositionY() {return positionY;}
     public Integer getAttitude() {return attitude;}
-
     public double getInvincibility() {return invincibility;}
-    public void setInvincibility(double invincibility) {this.invincibility = invincibility;}
     public Integer getPointDeVie() {return pointDeVie;}
-
+    public void setMonteOK(double monteOK) {this.monteOK = monteOK;}
+    public void setInvincibility(double invincibility) {this.invincibility = invincibility;}
     public void setPointDeVie(Integer pointDeVie) {this.pointDeVie = pointDeVie;}
 }
