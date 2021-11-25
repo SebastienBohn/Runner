@@ -51,7 +51,7 @@ public class Hero extends AnimatedThing {
     public void jump(){
         //On monte seulement si le joueur est au sol, on n'additionne pas les sauts :
         if(this.positionY>=250){
-            this.deplacementY-=10;
+            this.deplacementY-=11;
             this.monteOK=1;
         }
     }
@@ -59,12 +59,12 @@ public class Hero extends AnimatedThing {
 
     public void Update (long time) {
         //Le héros avance
-        positionX = (positionX + 5);
+        this.positionX = (this.positionX + 6);
 
         //On met les effets de la gravité :
         this.positionY+=this.deplacementY;
         if(this.monteOK==0){
-            this.deplacementY=5;
+            this.deplacementY=8;
         }
 
         //On définit le sol qui se situe à 50 pixels:
@@ -94,6 +94,5 @@ public class Hero extends AnimatedThing {
     public void setInvincibility(double invincibility) {this.invincibility = invincibility;}
     public Integer getPointDeVie() {return pointDeVie;}
 
-
-
+    public void setPointDeVie(Integer pointDeVie) {this.pointDeVie = pointDeVie;}
 }

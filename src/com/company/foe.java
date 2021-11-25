@@ -24,7 +24,7 @@ public class foe extends AnimatedThing{
         this.imageFoe = getImageDynamique();
         this.imageFoe.setX(this.positionX);
         this.imageFoe.setY(this.positionY);
-        this.collision = Rectangle2DgetHitBox(0,0,0,0,this.positionX,this.positionY);
+        //this.collision = Rectangle2DgetHitBox(0,0,0,0,this.positionX,this.positionY);
     }
 
     public double getPositionX() {return positionX;}
